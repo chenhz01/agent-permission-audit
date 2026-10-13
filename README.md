@@ -2,6 +2,8 @@
 
 Score how far an AI agent's tool permissions drift from least privilege. You give it a tool manifest (tools x operations) and an allow/deny policy; it classifies every `(tool, operation)` pair as allowed, denied, or unreviewed, weights the unreviewed surface by risk, and returns a 0-100 score with concrete tightening suggestions. Pure Python, standard library only, fully offline.
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 Agent frameworks let you grant tools like `fs.write` or `shell.exec`, and policies grow by accretion: one wildcard here, an old allow rule there. After a few weeks nobody can answer the only question that matters — *of everything this agent could do, what has actually been decided, and what is silently open?* Audit reports rarely exist because gathering them means reading JSON by hand and cross-referencing a manifest.
