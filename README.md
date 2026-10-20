@@ -1,5 +1,13 @@
 # agent-permission-audit
 
+> **Current version → [`chenhz01/permission-gate`](https://github.com/chenhz01/permission-gate)**
+>
+> The same tool, finished: the CLI is identical flag-for-flag (compare the two
+> `--help` outputs yourself), `examples/` are committed so a fresh clone reproduces
+> the documented output, CI asserts the exit code of that example — so the badge can
+> actually turn red — and there is a self-check you can rerun on your own machine
+> (`python tools/hotness.py`, 15 criteria). This repo remains as the earlier version.
+
 Score how far an AI agent's tool permissions drift from least privilege. You give it a tool manifest (tools x operations) and an allow/deny policy; it classifies every `(tool, operation)` pair as allowed, denied, or unreviewed, weights the unreviewed surface by risk, and returns a 0-100 score with concrete tightening suggestions. Pure Python, standard library only, fully offline.
 
 <p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
